@@ -1,3 +1,5 @@
+# stuff from labs
+
 def codes(string):
    '''prints the ASCII character for every character in given string'''
    #ASC = [print(ord(x)) for x in string]

@@ -1,5 +1,4 @@
 # stuff from labs
-
 def codes(string):
    '''prints the ASCII character for every character in given string'''
    #ASC = [print(ord(x)) for x in string]
@@ -37,6 +36,6 @@ def multlists(listA, listB):
 # expect: [(1, 'a'), (1, 'b'), (1, 'c'), (2, 'a'), (2, 'b'), (2, 'c')]
 print (multlists([1], ['a','b','c','d']))
 
-output = [if not(sevenFactor % 7): sevenFactor for sevenFactor 
-in range(1,100)]
-print(output)
+# output = [if not(sevenFactor % 7): sevenFactor for sevenFactor 
+# in range(1,100)]
+# print(output)

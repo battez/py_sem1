@@ -6,7 +6,6 @@ def main():
 
 	OUTPUT_SUFFIX = '_abbrevs.txt'
 
-
 	filename = "trees"
 
 	# build filename 
@@ -16,11 +15,11 @@ def main():
 	with open(filename, encoding = 'utf-8') as text:
 		text.read()
 
-		# TODO: close handle
+		# TODO: rewind handle
 		# rewind
 		#text.seek(0)
 		#
-
+    
 
 
 main()

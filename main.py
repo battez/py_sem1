@@ -5,24 +5,28 @@ import re
 import sys
 sys.stdout.buffer.write(chr(9986).encode('utf8'))
 
+import logging
+logger = logging.getLogger('root')
+FORMAT = "[%(lineno)s: - %(funcName)4s() ] %(message)s"
+logging.basicConfig(format=FORMAT)
+logger.setLevel(logging.DEBUG)
 
 def main():
     '''main method, prompts for file from user and loads it, then 
     pass to processing'''
 
-    OUTPUT_SUFFIX = '_abbrevs.txt'
-
-    
     # DEBUG:
     filename = 'test1'
     # text input:
     #filename = input('Please type name of a local file to process:')
 
-
     # build filename and .txt if needed:
+    OUTPUT_SUFFIX = '_abbrevs.txt'
     if filename[-4:].lower() is not OUTPUT_SUFFIX[-4:]:
         filename = filename + OUTPUT_SUFFIX[-4:]
     
+    # Read in the given file and generate potential abbreviations.
+    # 
     all_abbrevs = list()
     orig_lines = list()
     with open(filename, encoding='utf-8') as text:
@@ -36,12 +40,8 @@ def main():
             # remove unwanted characters etc:
             line = clean_text(line)
             
-            
             # get the potential abbrevs for this line:
             all_abbrevs.append(find_abbrevs(line))
-
-
-
 
 
         # TODO: rewind handle
@@ -52,9 +52,9 @@ def main():
         #
 
     #DEBUG
-    print(all_abbrevs)
+    logger.debug(all_abbrevs)
 
-    # TODO combine this with orig_lines and print the original text, then its abbrevs.
+    # print the original text, then its abbrevs.
     write_out(filename[0:-4] + OUTPUT_SUFFIX, all_abbrevs, orig_lines)
 
 
@@ -110,17 +110,37 @@ def find_abbrevs(line):
                 if val_j is not ' ':
 
                     abbrev = stem + val_j
+                    # now we should append this abbreviation 
+                    # as it is long enough:
                     result.append(abbrev)
                     
         
     # TODO remove duplicates
     # TODO append a tuple with indices and score also.
+    
     return result
 
-# debug
-print('---------debug----------')
+
+def search_value(search, list):
+    '''finds searched values in a list
+    and returns a list of indices for those values'''
+    result = []
+    [result.append(i) for i, value in enumerate(list) if value == search]
+    return result
+    
+    # list = ['foo', 'bar', 'baz', 'foo']
+    # search = 'foo'
+    # logger.debug(search_value(search, list))
+
+    # if list.count(search):
+    #     return list.index(search)
+    
+    # if search in list:
+    #     return list.index(search)
+    # return -1
+
+
 main()
 
-    
-    
+
 

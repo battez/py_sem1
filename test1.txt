@@ -1,5 +1,3 @@
 Cold
 Cool
 C++ Code
-Test's
-Test-ing

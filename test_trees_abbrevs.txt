@@ -1,0 +1,104 @@
+Alder
+ 
+Crab Apple
+CAP(1) 
+Common Ash
+CAS(1) 
+Silver Birch
+SLB(2) 
+Downy Birch
+DBR(2) DWB(2) 
+European Beech
+EBC(3) 
+Box
+BOX(13) 
+Wild Cherry
+WLH(3) 
+Bird Cherry
+BRC(2) 
+Blackthorn
+BLT(6) 
+Wych Elm
+WEM(2) WYL(2) 
+Smooth-leaved Elm
+STL(4) 
+Common Hawthorn
+CHW(2) 
+Midland Hawthorn
+MDH(2) MHW(2) 
+Common Hazel
+CHZ(2) 
+European Hornbeam
+EHR(2) 
+European Holly
+EHL(2) 
+Common Juniper
+CMJ(2) CJN(2) 
+Small-leaved Lime
+SMI(12) 
+Large-leaved Lime
+LLL(0) 
+Field Maple
+FMP(2) 
+Pedunculate Oak
+PDO(2) POK(2) 
+Sessile Oak
+SSO(2) SOK(2) 
+Scots Pine
+SCP(1) 
+Aspen
+ASP(3) 
+Black Poplar
+BLP(1) 
+European Rowan
+EWN(6) 
+Common Whitebeam
+CWB(5) 
+Service Tree
+SVT(3) 
+Wild Service Tree
+WST(0) 
+Strawberry Tree
+STT(1) 
+Bay Willow
+BWL(2) BYW(2) 
+Crack Willow
+CRW(1) 
+White Willow
+WHW(1) 
+Almond-leaved Willow
+ALW(0) 
+European Yew
+EYW(2) 
+Alder Buckthorn
+ALB(1) 
+Purging Buckthorn
+PRB(2) PBC(2) 
+Elder
+ELD(3) 
+Common Dogwood
+CDG(2) CMD(2) 
+Rock Whitebeam
+RWH(1) 
+Sea-buckthorn
+SBK(3) 
+Spindle
+SPD(5) 
+Sallow
+SLW(7) 
+Grey Willow
+GRW(1) 
+Purple Willow
+PRW(2) PWL(2) 
+Common Osier
+CSR(5) 
+Eared Willow
+EWL(2) 
+Guelder Rose
+GRS(2) 
+Wayfaring tree
+WYT(2) 
+Common Privet
+CPV(3) 
+Plot’s Elm
+PEM(2) 

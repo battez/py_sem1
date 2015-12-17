@@ -53,7 +53,7 @@ def main():
             line = clean_text(line)
             
             # get the potential abbrevs for this line and update our record
-            # of what we abbrevs we already have:
+            # of what abbrevs we already have:
             (line, already, excluded) = find_abbrevs(i, line, already, excluded)
 
             # finally append this line to our abbrevs. 
@@ -63,13 +63,14 @@ def main():
         # TODO: rewind handle
         # rewind
         #text.seek(0)
-        #
-        #
-        #
 
-    #DEBUG
-    logger.debug(excluded)
-
+    #
+    # calculate scores here:
+    # loop through all_abbrevs
+    # if empty ignore
+    # get min scores, if tie, append list
+    # 
+    logger.debug(all_abbrevs[0:4])
     # print the original text, then its abbrevs.
     write_out(filename[0:-4] + OUTPUT_SUFFIX, all_abbrevs, orig_lines)
 
@@ -113,7 +114,7 @@ def find_abbrevs(line_index, line, already, excluded):
     of any 3-letter abbreviations.'''
     result = list()
     for idx_i, val_i in enumerate(line[1:-1], start=1):
-        logger.debug(line)
+        
         # skip if the value is a space (and thus falsy):
         if val_i is not ' ':
 
@@ -127,36 +128,25 @@ def find_abbrevs(line_index, line, already, excluded):
 
                     # assemble abbreviation:
                     abbrev = stem + val_j
-                    logger.debug(abbrev)
+                    
                     # check for duplicates of this abbrev in other lines
                     # and remove necessary if we find any:
                     if abbrev in already:
 
                         remove_index = already[abbrev]
-                        
-                        # logger.debug(line_index)
-                        # logger.debug(remove_index)
-                       
-
+                     
                         if line_index != remove_index:
                             
-                            
                             # remove this abbrev. from global >> all_abbrevs:
-                            purge = search_value(abbrev, all_abbrevs[remove_index])
-                            
                             try:
-                                logger.debug(all_abbrevs[remove_index])
-                                logger.debug(purge)
-                                for index in purge:
+                                for index in search_value(abbrev, all_abbrevs[remove_index]):
                                     all_abbrevs[remove_index].pop(index)
 
-                                
-                                # ...from already 
+                                # remove from already also
                                 del already[abbrev]
 
-                                # ...and add to excluded
+                                # ...and add to excluded.
                                 excluded.add(abbrev)
-                                logger.debug(excluded)
 
                             except ValueError:
                                 pass
@@ -164,19 +154,18 @@ def find_abbrevs(line_index, line, already, excluded):
                             # skip to next
                             continue
 
-                    # check it is not in the excluded either:
+                    # check it is not in the excluded set, either:
                     if abbrev not in excluded:
                         already[abbrev] = line_index
 
                         # now we should append this abbreviation 
-                        # as it is long enough:
+                        # as it is valid and long enough:
                         result.append(abbrev)
 
-    
+    # return the result with updated abbrevs, 
+    # and also updated versions of already dict and excluded set.
     # TODO append a tuple with indices and score also.
-    
     return (result, already, excluded)
-
 
 def search_value(search, list):
     '''finds searched values in a list
@@ -185,22 +174,8 @@ def search_value(search, list):
     [result.append(i) for i, value in enumerate(list) if value == search]
 
     # we need to sort it before returning, 
-    # as we might delete from the higher indices first!
+    # as we want to delete from the higher indices first.
     return sorted(result, reverse=True)
-
-
-    # list = ['foo', 'bar', 'baz', 'foo']
-    # search = 'fooh'
-    # logger.debug(search_value(search, list))
-
-
-    # if list.count(search):
-    #     return list.index(search)
-    
-    # if search in list:
-    #     return list.index(search)
-    # return -1
-
 
 main()
 

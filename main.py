@@ -11,18 +11,18 @@ logging.basicConfig(format=FORMAT)
 logger.setLevel(logging.DEBUG)
 
 
-# global; stores our final abbreviations and is used by various functions
+# globals; stores our final abbreviations and is used by various functions
 all_abbrevs = list() 
+scores_for_all_line_indices = list()
 
 def main():
-    '''main method, prompts for file from user and loads it, then 
-    pass to processing'''
-
+    '''Main method, prompts for file from user and loads it, then 
+    passes to processing.'''
     # DEBUG:
     filename = 'test1'
-    filename = 'trees'
+    # filename = 'trees'
     # text input:
-    #filename = input('Please type name of a local file to process:')
+    # filename = input('Please type name of a local file to process:')
 
     # build filename and .txt if needed:
     OUTPUT_SUFFIX = '_abbrevs.txt'
@@ -52,6 +52,10 @@ def main():
             # remove unwanted characters etc:
             line = clean_text(line)
             
+            # score this line for each of its indices, so we can lookup
+            scores_for_all_line_indices.append(score_line(line))
+            logger.debug(scores_for_all_line_indices)
+
             # get the potential abbrevs for this line and update our record
             # of what abbrevs we already have:
             (line, already, excluded) = find_abbrevs(i, line, already, excluded)
@@ -70,21 +74,55 @@ def main():
     # if empty ignore
     # get min scores, if tie, append list
     # 
-    logger.debug(all_abbrevs[0:4])
+    # logger.debug(all_abbrevs[0:4])
     # print the original text, then its abbrevs.
     write_out(filename[0:-4] + OUTPUT_SUFFIX, all_abbrevs, orig_lines)
 
 def write_out(filename, iterable_text, orig_lines):
-    '''output a given filename with suffix to filesystem,
+    '''Output a given filename with suffix to filesystem,
      contain original names and order plus the chosen abbreviations.
-     (A blank given if no acceptable abbreviation).
-     All tied, best matches should be printed together.
+     NB A blank given if no acceptable abbreviation. Also:
+     all tied, best matches should be printed together.
     '''
     with open(filename, mode='w', encoding='utf-8') as outfile:
         for i, orig_line in enumerate(orig_lines):
             outfile.write(orig_line)
             outfile.write(' '.join(iterable_text[i]))
             outfile.write('\n')
+
+    print('-----------------------------------')
+    print('File has been written:', filename, ', thank you.')
+
+def score(string):
+    '''Find the score of every character in a word.
+    Vowels score extra 10. 
+    '''
+    vowels = set('AEIOU')
+    score = list()
+    for idx, char in enumerate(string):
+        if (idx is 0) or (char not in vowels):
+            score.append(idx)
+        else:
+            score.append(idx + 10)
+    return score
+
+def score_line(line):
+    '''Take a line and for each index calculate the scores
+    for each of its indices (i.e. the chars in those indices), 
+    according to the following rules:
+    - index per letter, counting up from zero for word it is in
+    - add 10 to any vowel chars unless they begin a word
+    '''
+    pieces = line.split(' ')
+    scores_by_char = list()
+    for idx, word in enumerate(pieces):
+        # make a list of scores for each char in word:
+        word_scores = score(word)
+        # if there was a space we put a zero in its place too:
+        if(idx < (len(pieces) - 1)):
+            word_scores.append(0)
+        scores_by_char += word_scores
+    return scores_by_char
 
 def clean_text(text):
     '''Wrangle and homogenise text data, ready for processing.
@@ -101,7 +139,7 @@ def clean_text(text):
     return regex.sub(" ", text)
 
 def find_abbrevs(line_index, line, already, excluded):
-    ''' find all the possible abbreviations for a given line
+    '''Find all the possible abbreviations for a given line
     and return as a list, abbrevs.
 
     We calculate all possible 2 and 3rd letter
@@ -113,6 +151,7 @@ def find_abbrevs(line_index, line, already, excluded):
     since the last letter could not act as the 2nd letter
     of any 3-letter abbreviations.'''
     result = list()
+    
     for idx_i, val_i in enumerate(line[1:-1], start=1):
         
         # skip if the value is a space (and thus falsy):
@@ -151,30 +190,31 @@ def find_abbrevs(line_index, line, already, excluded):
                             except ValueError:
                                 pass
                             
-                            # skip to next
+                            # skip to next8
                             continue
 
                     # check it is not in the excluded set, either:
                     if abbrev not in excluded:
+
                         already[abbrev] = line_index
 
                         # now we should append this abbreviation 
                         # as it is valid and long enough:
                         result.append(abbrev)
 
-    # return the result with updated abbrevs, 
-    # and also updated versions of already dict and excluded set.
+    # return the result with updated abbrevs, and also 
+    # updated versions of already dict and excluded set.
     # TODO append a tuple with indices and score also.
     return (result, already, excluded)
 
 def search_value(search, list):
-    '''finds searched values in a list
-    and returns a list of indices for those values'''
+    '''Find searched values in a list
+    and return a list of indices for those values'''
     result = []
     [result.append(i) for i, value in enumerate(list) if value == search]
 
-    # we need to sort it before returning, 
-    # as we want to delete from the higher indices first.
+    # we need to sort it before returning, as we 
+    # want to delete from the higher indices first.
     return sorted(result, reverse=True)
 
 main()

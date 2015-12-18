@@ -1,5 +1,15 @@
 # rubric.py
 
+# DEBUG
+import sys
+sys.stdout.buffer.write(chr(9986).encode('utf8'))
+import logging
+logger = logging.getLogger('root')
+FORMAT = "[%(lineno)s: - %(funcName)4s() ] %(message)s"
+logging.basicConfig(format=FORMAT)
+logger.setLevel(logging.DEBUG)
+
+
 # trees.txt - testing
 
 # zip all .py files
@@ -19,7 +29,7 @@
 
     # ignore: apostrophes ' 
     # Other chars (nonletter) ignored, but split name into separate words. 
-    # (replace with a space then?)
+    # (i.e. replace with a space then)
 
 # Valid abbrevs:
     # must be first letter of name, plus any two others IN ORDER

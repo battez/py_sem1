@@ -1,38 +1,44 @@
 # main.py
+# John Luke Barker
+# AC50002 Programming Languages for 
+# Data Engineering: Python Assignment
+# Semester 1, 2015. 
+#
+# Make use of regular expressions:
 import re
-
-# DEBUG
-import sys
-sys.stdout.buffer.write(chr(9986).encode('utf8'))
-import logging
-logger = logging.getLogger('root')
-FORMAT = "[%(lineno)s: - %(funcName)4s() ] %(message)s"
-logging.basicConfig(format=FORMAT)
-logger.setLevel(logging.DEBUG)
-
 
 # global; stores our final abbreviations and is used by various functions
 all_abbrevs = list() 
-# scores_for_all_line_indices = list()
-# global stores a parallel list for the score for each abbreviation
+
+# global; stores a parallel list for the score for each abbreviation
 # in above, with the corresponding index. 
 all_scores_for_abbrevs = list()
 
 def main():
-    '''Main method, prompts for file from user and loads it, then 
-    passes to processing.'''
-    # DEBUG:
-    # filename = 'test1'
-    filename = 'trees'
+    '''Main method for the program:
+    - prompts for file from user and loads it
+    - initialise variables to keep track of duplicate abbreviations
+    - passes to processing
+        - read in file, line by line
+        - clean the text for the line
+        - get the abbreviations for this line
+        - get their scores too
+        - also removing any duplicates from the global lists 
+        as we go along
+        - add the new abbreviations and scores as rows
+        to our global vars that store them all.
+    - reduce global lists down to the lowest score abbrevs.
+    - output to file our results.
+    '''
     # text input:
-    # filename = input('Please type name of a local file to process:')
-
+    filename = input('Please type name of a local file to process:')
     # build filename and .txt if needed:
     OUTPUT_SUFFIX = '_abbrevs.txt'
     if filename[-4:].lower() is not OUTPUT_SUFFIX[-4:]:
         filename = filename + OUTPUT_SUFFIX[-4:]
     
-    orig_lines = list() # keep a record of original lines from file
+    # keep a record of original lines from file
+    orig_lines = list() 
 
     # Store abbrevs as keys and their values as lines they are in
     # this will help us quickly identify duplicated abbrevs
@@ -46,7 +52,7 @@ def main():
     # and generate potential abbreviations:
     with open(filename, encoding='utf-8') as text:
         
-        for i, line in enumerate(text):
+        for line_num, line in enumerate(text):
             
             # store the original lines in order, here, so we can 
             # look up by index later when we output:
@@ -55,13 +61,9 @@ def main():
             # remove unwanted characters etc:
             line = clean_text(line)
             
-            # score this line for each of its indices, so we can lookup
-            # scores_for_all_line_indices.append(score_line(line))
-           
-
             # get the potential abbrevs for this line and update our record
             # of what abbrevs we already have:
-            (line, already, excluded, line_scores) = find_abbrevs(i, line, already, excluded)
+            (line, already, excluded, line_scores) = find_abbrevs(line_num, line, already, excluded)
 
             # finally, append this line to our abbrevs.
             # and the scores for it to our other global list. 
@@ -69,19 +71,30 @@ def main():
 
             all_scores_for_abbrevs.append(line_scores)
 
-        # TODO: rewind handle
-        # rewind
-        #text.seek(0)
-
-    #
-    # calculate scores here:
-    # loop through all_abbrevs
-    # if empty ignore
-    # get min scores, if tie, append list
-    # 
-    # logger.debug(all_abbrevs[0:4])
+    # calculate min. scores here:
+    reduce_to_lowest_scores()
+    
     # print the original text, then its abbrevs.
     write_out(filename[0:-4] + OUTPUT_SUFFIX, orig_lines)
+
+def reduce_to_lowest_scores():
+    '''This will reduce the global list of abbreviations to 
+    only be the abbreviation(s) with the lowest score for
+    that particular row. The score list will have each row
+    reduced to the score only so we can output it alongside. 
+    '''
+    for idx_row, row in enumerate(all_scores_for_abbrevs):
+
+        # only process non-empty lists:
+        if row:
+            lowest_score = min(row)
+            all_low = [idx for idx, score in enumerate(row) if score == lowest_score]
+            temp = list()
+            for idx in all_low:
+                temp.append(all_abbrevs[idx_row][idx])
+            all_abbrevs[idx_row] = temp
+            all_scores_for_abbrevs[idx_row] = lowest_score
+            
 
 def write_out(filename, orig_lines):
     '''Output a given filename with suffix to filesystem,
@@ -90,15 +103,16 @@ def write_out(filename, orig_lines):
      all tied, best matches should be printed together.
     '''
     with open(filename, mode='w', encoding='utf-8') as outfile:
-        for i, orig_line in enumerate(orig_lines):
+        for idx, orig_line in enumerate(orig_lines):
             outfile.write(orig_line)
-            outfile.write(' '.join(all_abbrevs[i]))
-            outfile.write('\n')
-            outfile.write(', '.join(map(str, all_scores_for_abbrevs[i])))
+            outfile.write(' '.join(all_abbrevs[idx]))
+            # output the score at end of line if an abbreviation exists:
+            if all_abbrevs[idx]:
+                outfile.write(' ' + str(all_scores_for_abbrevs[idx]))
             outfile.write('\n')
 
-    print('-----------------------------------')
-    print('File has been written:', filename, ', thank you.')
+    print('-------------------------------------------------')
+    print('File written:', filename, ', thank you.')
 
 def score(string):
     '''Find the score of every character in a word.
@@ -232,7 +246,7 @@ def search_value(search, list):
     '''Find searched values in a list
     and return a list of indices for those values'''
     result = []
-    [result.append(i) for i, value in enumerate(list) if value == search]
+    [result.append(idx) for idx, value in enumerate(list) if value == search]
 
     # we need to sort it before returning, as we 
     # want to delete from the higher indices first.

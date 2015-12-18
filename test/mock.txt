@@ -1,0 +1,151 @@
+Hawkins	Argentina	Peso
+Perez	Mongolia	Tugrik
+Morrison	Greece	Euro
+Johnston	Yemen	Rial
+Kennedy	Poland	Zloty
+Walker	Honduras	Lempira
+Stanley	Russia	Ruble
+Larson	Sweden	Krona
+Perkins	Brazil	Real
+
+Morales	Indonesia	Rupiah
+
+Myers	Colombia	Peso
+Sims	Malaysia	Ringgit
+Ruiz	China	Yuan Renminbi
+Stevens	Indonesia	Rupiah
+Murphy	French Polynesia	Franc
+Griffin	Indonesia	Rupiah
+Owens	Saudi Arabia	Rial
+Arnold	Philippines	Peso
+Stevens	China	Yuan Renminbi
+Palmer	Russia	Ruble
+Rose	France	Euro
+Clark	Portugal	Euro
+Miller	Poland	Zloty
+Welch	Ukraine	Hryvnia
+Perkins	France	Euro
+Jacobs	Indonesia	Rupiah
+Lawrence	France	Euro
+Bowman	Poland	Zloty
+Crawford	Russia	Ruble
+Hughes	Poland	Zloty
+Lopez	China	Yuan Renminbi
+Long	Madagascar	Ariary
+Spencer	China	Yuan Renminbi
+Turner	Serbia	Dinar
+Wood	Peru	Sol
+Garrett	Nepal	Rupee
+James	Sweden	Krona
+Knight	China	Yuan Renminbi
+Brooks	Czech Republic	Koruna
+Turner	Poland	Zloty
+Kelly	Botswana	Pula
+Cooper	Indonesia	Rupiah
+Matthews	Morocco	Dirham
+Stanley	Japan	Yen
+Barnes	Jordan	Dinar
+Martinez	Russia	Ruble
+White	Sweden	Krona
+Garcia	Russia	Ruble
+Oliver	Portugal	Euro
+Bennett	Brazil	Real
+Hawkins	China	Yuan Renminbi
+Griffin	Indonesia	Rupiah
+Watkins	Morocco	Dirham
+Chavez	Sweden	Krona
+Murray	China	Yuan Renminbi
+Warren	Sudan	Pound
+Martin	Indonesia	Rupiah
+Mitchell	Portugal	Euro
+Baker	China	Yuan Renminbi
+Hunter	Poland	Zloty
+Fisher	France	Euro
+Armstrong	Indonesia	Rupiah
+Johnson	Brazil	Real
+Hall	Peru	Sol
+Dixon	Indonesia	Rupiah
+Ramirez	Canada	Dollar
+Arnold	Azerbaijan	Manat
+Mendoza	American Samoa	Dollar
+Matthews	Indonesia	Rupiah
+Wood	Indonesia	Rupiah
+Perry	Costa Rica	Colon
+Murray	Indonesia	Rupiah
+Montgomery	Cameroon	Franc
+Banks	China	Yuan Renminbi
+Jenkins	China	Yuan Renminbi
+Richards	Poland	Zloty
+Reynolds	China	Yuan Renminbi
+Allen	Poland	Zloty
+Hicks	Sweden	Krona
+Sanchez	China	Yuan Renminbi
+Bradley	Russia	Ruble
+Wheeler	Philippines	Peso
+Ellis	United States	Dollar
+James	China	Yuan Renminbi
+Peterson	Canada	Dollar
+Watkins	China	Yuan Renminbi
+Little	Greece	Euro
+Lopez	Russia	Ruble
+Hart	Indonesia	Rupiah
+Harris	Jamaica	Dollar
+Hughes	Poland	Zloty
+Fuller	China	Yuan Renminbi
+Roberts	Peru	Sol
+Rivera	Laos	Kip
+Reid	China	Yuan Renminbi
+Young	Indonesia	Rupiah
+Dunn	Kazakhstan	Tenge
+Chapman	China	Yuan Renminbi
+Peterson	China	Yuan Renminbi
+Romero	Brazil	Real
+Reyes	France	Euro
+Fisher	Croatia	Kuna
+Johnson	Azerbaijan	Manat
+Riley	Indonesia	Rupiah
+Ramirez	Poland	Zloty
+Rodriguez	Madagascar	Ariary
+Parker	Indonesia	Rupiah
+Fernandez	China	Yuan Renminbi
+Morgan	Indonesia	Rupiah
+Ramirez	Russia	Ruble
+Rogers	Russia	Ruble
+Wells	Germany	Euro
+Walker	Macedonia	Denar
+Sanders	Russia	Ruble
+Mason	China	Yuan Renminbi
+Perkins	Philippines	Peso
+Hill	Indonesia	Rupiah
+Ramos	Taiwan	Dollar
+Hayes	Liberia	Dollar
+Burke	Syria	Pound
+Powell	Peru	Sol
+Peterson	Iraq	Dinar
+Garza	Indonesia	Rupiah
+Day	Indonesia	Rupiah
+Bennett	Indonesia	Rupiah
+Simpson	Czech Republic	Koruna
+Morrison	Portugal	Euro
+Richards	Argentina	Peso
+Pierce	China	Yuan Renminbi
+Price	Indonesia	Rupiah
+Gray	China	Yuan Renminbi
+Howell	Indonesia	Rupiah
+Ryan	Bolivia	Boliviano
+Perez	Venezuela	Bolivar
+Washington	Democratic Republic of the Congo	Franc
+Shaw	Poland	Zloty
+Brown	Uruguay	Peso
+Rose	Egypt	Pound
+Gibson	Poland	Zloty
+Hughes	Thailand	Baht
+Johnson	Tajikistan	Somoni
+Miller	Philippines	Peso
+Cunningham	Norway	Krone
+Weaver	China	Yuan Renminbi
+Romero	Philippines	Peso
+Foster	Russia	Ruble
+Wells	Afghanistan	Afghani
+Larson	Argentina	Peso
+Jordan	Brazil	Real

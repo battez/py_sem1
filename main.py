@@ -1,10 +1,17 @@
 # main.py
-# John Luke Barker
+# by John Luke Barker
 # AC50002 Programming Languages for 
 # Data Engineering: Python Assignment
 # Semester 1, 2015. 
 #
-# Make use of regular expressions:
+# Usage: ensure file for processing in the python working directory,
+# as well as this script, main.py
+#
+# Then type main at the python prompt e.g.:
+# >>> import main
+# 
+# Require some standard libraries:
+import os
 import re
 
 # global; stores our final abbreviations and is used by various functions
@@ -30,13 +37,27 @@ def main():
     - reduce global lists down to the lowest score abbrevs.
     - output to file our results.
     '''
-    # text input:
-    filename = input('Please type name of a local file to process:')
-    # build filename and .txt if needed:
+    # constant we use for the output file:
     OUTPUT_SUFFIX = '_abbrevs.txt'
-    if filename[-4:].lower() is not OUTPUT_SUFFIX[-4:]:
-        filename = filename + OUTPUT_SUFFIX[-4:]
-    
+
+    # text input:
+    print('NB The current directory is: ', os.getcwd())
+    filename = ''
+    while True:
+        try:
+            filename = input('Please type name of a file in this directory to process:')
+            # build filename and .txt if needed:
+            if filename[-4:].lower() != '.txt':
+                filename = filename + '.txt'
+            print('Your file: ',filename)
+            if not os.path.isfile(filename):
+                raise ValueError('')
+        except ValueError:
+            print('Sorry that does not appear to be a valid local file')
+            continue
+        else:
+            break
+
     # keep a record of original lines from file
     orig_lines = list() 
 
@@ -48,8 +69,8 @@ def main():
     # a set of what we have already excluded
     excluded = set()
 
-    # Read in the given file,
-    # and generate potential abbreviations:
+    # Read in the given file, and generate potential 
+    # abbreviations:
     with open(filename, encoding='utf-8') as text:
         
         for line_num, line in enumerate(text):
@@ -175,12 +196,12 @@ def find_abbrevs(line_index, line, already, excluded):
     # first calculate the score for all chars in this line, 
     # we can then look up a score for abbrev. by indices:
     score_per_character = score_line(line)
-    
 
     # now loop through our line and get abbreviations
     # and score them.
     result = list()
     result_scores = list()
+
     for idx_i, val_i in enumerate(line[1:-1], start=1):
         
         # skip if the value is a space (and thus falsy):
@@ -238,7 +259,7 @@ def find_abbrevs(line_index, line, already, excluded):
                         result_scores.append(abbrev_score)
 
     # return the result with updated abbrevs, and also 
-    # updated versions of already dict and excluded set.
+    # updated versions of already dict and excluded set;
     # also append a list with corresponding scores also.
     return (result, already, excluded, result_scores)
 
@@ -252,6 +273,7 @@ def search_value(search, list):
     # want to delete from the higher indices first.
     return sorted(result, reverse=True)
 
+# this call will run the program:
 main()
 
 

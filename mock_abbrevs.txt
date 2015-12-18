@@ -1,0 +1,302 @@
+Hawkins	Argentina	Peso
+HAG 2
+Perez	Mongolia	Tugrik
+PMT 0
+Morrison	Greece	Euro
+
+Johnston	Yemen	Rial
+JYL 3
+Kennedy	Poland	Zloty
+KPZ 0
+Walker	Honduras	Lempira
+WKL 3
+Stanley	Russia	Ruble
+SLB 6
+Larson	Sweden	Krona
+LSK 0
+Perkins	Brazil	Real
+PKB PBZ 3
+
+
+Morales	Indonesia	Rupiah
+
+
+
+Myers	Colombia	Peso
+MMP 4
+Sims	Malaysia	Ringgit
+SMM 2
+Ruiz	China	Yuan Renminbi
+RZH 4
+Stevens	Indonesia	Rupiah
+SID 2
+Murphy	French Polynesia	Franc
+MFP MFF MPF 0
+Griffin	Indonesia	Rupiah
+
+Owens	Saudi Arabia	Rial
+OSA OSR 0
+Arnold	Philippines	Peso
+APP 0
+Stevens	China	Yuan Renminbi
+STC 1
+Palmer	Russia	Ruble
+PLM PMS 5
+Rose	France	Euro
+ROF 11
+Clark	Portugal	Euro
+CLP 1
+Miller	Poland	Zloty
+MPZ 0
+Welch	Ukraine	Hryvnia
+WUK 1
+Perkins	France	Euro
+PFE 0
+Jacobs	Indonesia	Rupiah
+JID JIP JRP 2
+Lawrence	France	Euro
+LFE 0
+Bowman	Poland	Zloty
+BPZ 0
+Crawford	Russia	Ruble
+CFR CFR CSB 4
+Hughes	Poland	Zloty
+
+Lopez	China	Yuan Renminbi
+LYR 0
+Long	Madagascar	Ariary
+LMA 0
+Spencer	China	Yuan Renminbi
+SPM 4
+Turner	Serbia	Dinar
+TSD 0
+Wood	Peru	Sol
+
+Garrett	Nepal	Rupee
+GPR 2
+James	Sweden	Krona
+JSW JWK 1
+Knight	China	Yuan Renminbi
+KCY KCR KYR 0
+Brooks	Czech Republic	Koruna
+BCK 0
+Turner	Poland	Zloty
+TPZ 0
+Kelly	Botswana	Pula
+KBP 0
+Cooper	Indonesia	Rupiah
+CID CIP 2
+Matthews	Morocco	Dirham
+MMH 3
+Stanley	Japan	Yen
+SJY 0
+Barnes	Jordan	Dinar
+BJD 0
+Martinez	Russia	Ruble
+MTB MBL 5
+White	Sweden	Krona
+WSK 0
+Garcia	Russia	Ruble
+GSB 4
+Oliver	Portugal	Euro
+OPE 0
+Bennett	Brazil	Real
+BBZ 3
+Hawkins	China	Yuan Renminbi
+HCY 0
+Griffin	Indonesia	Rupiah
+
+Watkins	Morocco	Dirham
+WMM 5
+Chavez	Sweden	Krona
+CSK 0
+Murray	China	Yuan Renminbi
+
+Warren	Sudan	Pound
+WPD 4
+Martin	Indonesia	Rupiah
+
+Mitchell	Portugal	Euro
+MCT 6
+Baker	China	Yuan Renminbi
+
+Hunter	Poland	Zloty
+HTZ 3
+Fisher	France	Euro
+FFE 0
+Armstrong	Indonesia	Rupiah
+AIR 0
+Johnson	Brazil	Real
+
+Hall	Peru	Sol
+HPR 2
+Dixon	Indonesia	Rupiah
+DXI DXR 2
+Ramirez	Canada	Dollar
+
+Arnold	Azerbaijan	Manat
+AAM 0
+Mendoza	American Samoa	Dollar
+MDD MML 3
+Matthews	Indonesia	Rupiah
+MWN 7
+Wood	Indonesia	Rupiah
+
+Perry	Costa Rica	Colon
+PCT 3
+Murray	Indonesia	Rupiah
+MYD 7
+Montgomery	Cameroon	Franc
+MMF 2
+Banks	China	Yuan Renminbi
+BNC 2
+Jenkins	China	Yuan Renminbi
+JNC 2
+Richards	Poland	Zloty
+RCZ 2
+Reynolds	China	Yuan Renminbi
+RYY 2
+Allen	Poland	Zloty
+APZ 0
+Hicks	Sweden	Krona
+HSK 0
+Sanchez	China	Yuan Renminbi
+SHH 5
+Bradley	Russia	Ruble
+BDB BSS 5
+Wheeler	Philippines	Peso
+WPP 0
+Ellis	United States	Dollar
+EUS EUD ESD 0
+James	China	Yuan Renminbi
+JMC JMY 2
+Peterson	Canada	Dollar
+PDL 2
+Watkins	China	Yuan Renminbi
+WTY 2
+Little	Greece	Euro
+LTG 2
+Lopez	Russia	Ruble
+LRL LRL 3
+Hart	Indonesia	Rupiah
+HTU 14
+Harris	Jamaica	Dollar
+HJD 0
+Hughes	Poland	Zloty
+
+Fuller	China	Yuan Renminbi
+FLC FLY FLR 2
+Roberts	Peru	Sol
+RBP RBS RPR 2
+Rivera	Laos	Kip
+RLK 0
+Reid	China	Yuan Renminbi
+
+Young	Indonesia	Rupiah
+YIR 0
+Dunn	Kazakhstan	Tenge
+DKT 0
+Chapman	China	Yuan Renminbi
+CCY CCR 0
+Peterson	China	Yuan Renminbi
+PTY 2
+Romero	Brazil	Real
+RBZ 3
+Reyes	France	Euro
+RYF 2
+Fisher	Croatia	Kuna
+FCK 0
+Johnson	Azerbaijan	Manat
+JZM 1
+Riley	Indonesia	Rupiah
+RUP 13
+Ramirez	Poland	Zloty
+RZP RZZ 6
+Rodriguez	Madagascar	Ariary
+RMG 4
+Parker	Indonesia	Rupiah
+PKD 5
+Fernandez	China	Yuan Renminbi
+FNH 4
+Morgan	Indonesia	Rupiah
+MGI 3
+Ramirez	Russia	Ruble
+RMU RMU 13
+Rogers	Russia	Ruble
+RGB 4
+Wells	Germany	Euro
+WGY 6
+Walker	Macedonia	Denar
+
+Sanders	Russia	Ruble
+SDB 5
+Mason	China	Yuan Renminbi
+MSY 2
+Perkins	Philippines	Peso
+PPP 0
+Hill	Indonesia	Rupiah
+
+Ramos	Taiwan	Dollar
+RTW RWD 3
+Hayes	Liberia	Dollar
+HYL HYD HBD 2
+Burke	Syria	Pound
+BYD 5
+Powell	Peru	Sol
+PWP PWS PPR 2
+Peterson	Iraq	Dinar
+PIQ PQD 3
+Garza	Indonesia	Rupiah
+GZI GZR 3
+Day	Indonesia	Rupiah
+DYI DYR 2
+Bennett	Indonesia	Rupiah
+BDP 4
+Simpson	Czech Republic	Koruna
+SCK SRK 0
+Morrison	Portugal	Euro
+MST 8
+Richards	Argentina	Peso
+RCG 4
+Pierce	China	Yuan Renminbi
+
+Price	Indonesia	Rupiah
+PCP 5
+Gray	China	Yuan Renminbi
+GCY GYR 0
+Howell	Indonesia	Rupiah
+HWL 6
+Ryan	Bolivia	Boliviano
+RBB 0
+Perez	Venezuela	Bolivar
+PVB 0
+Washington	Democratic Republic of the Congo	Franc
+WDT WDC WDF WRT WRF WOT WOF WCF 0
+Shaw	Poland	Zloty
+SLZ 2
+Brown	Uruguay	Peso
+BPS 2
+Rose	Egypt	Pound
+RYT 6
+Gibson	Poland	Zloty
+GPZ 0
+Hughes	Thailand	Baht
+HTB 0
+Johnson	Tajikistan	Somoni
+JTS 0
+Miller	Philippines	Peso
+
+Cunningham	Norway	Krone
+CNW 3
+Weaver	China	Yuan Renminbi
+WVC WVY WVR 3
+Romero	Philippines	Peso
+RMH 3
+Foster	Russia	Ruble
+FRS 2
+Wells	Afghanistan	Afghani
+WFS 8
+Larson	Argentina	Peso
+LAP 0
+Jordan	Brazil	Real
+JDB 3
